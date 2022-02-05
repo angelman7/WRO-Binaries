@@ -12,4 +12,4 @@ class Pillar:
         self.lowers.append(lower)
 
     def add_upper(self, upper):
-        self.lowers.append(upper)
+        self.uppers.append(upper)
