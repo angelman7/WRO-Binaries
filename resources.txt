@@ -1,0 +1,9 @@
+All resources(links, etc) are stored here.
+
+CATEGORIES
+
+- WRO:
+https://github.com/World-Robot-Olympiad-Association/future-engineers-gs
+
+- Lego Design/Model
+https://www.mecabricks.com/en/models/JV2yb5pmjyQ
