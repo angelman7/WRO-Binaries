@@ -4,7 +4,6 @@ import imutils
 
 class Camera:
     def __init__(self, type=-1, width=640, height=480, framerate=90, flip=0) -> None:
-        self.type = type
         self.width = width
         self.height = height
         self.framerate = framerate
