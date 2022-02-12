@@ -92,19 +92,3 @@ class PillarDetector:
         if sort:
             con_found = sorted(con_found, key=lambda x: x[1], reverse=True)
         return img_contours, con_found
-
-
-def test():
-    blue_bounds = [([104, 193, 45], [119, 255, 255])]
-    blue_pillar = Pillar('blue', blue_bounds, 500)
-
-    red_bounds = [([175, 190, 24], [179, 255, 255]), ([0, 197, 50], [7, 255, 255])]
-    red_pillar = Pillar('red', red_bounds, 500)
-
-    detector = PillarDetector([red_pillar, blue_bounds])
-    cam = Camera()
-    while True:
-        frame = cam.get_frame
-        
-
-    
