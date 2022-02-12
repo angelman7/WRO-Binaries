@@ -17,7 +17,9 @@ class PillarDetector:
             image_pre = self.pre_processing(image_color)
             img_contours, con_found = self.find_contours(image_color, image_pre, pillar.min_area)
             for contour in con_found:
-                pass
+                pillar_object = {'name':pillar.name, 'area':contour[1], 'position':contour[2]}
+                detected.append(pillar_object)
+        return detected
 
     def find_color(self, image, hsv_image, hsv_bounds):
         """
