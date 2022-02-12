@@ -5,12 +5,19 @@ from camera import Camera
 
 
 class PillarDetector:
-    def __init__(self, pillars):
+    def __init__(self, pillars) -> None:
         self.pillars = pillars
 
     def detect_pillars(self, image):
         detected = []
-        # type your code
+        hsv_image = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
+
+        for pillar in self.pillars:
+            image_color = self.find_color(image, hsv_image, pillar.hsv_bounds)
+            image_pre = self.pre_processing(image_color)
+            img_contours, con_found = self.find_contours(image_color, image_pre, pillar.min_area)
+            for contour in con_found:
+                pass
 
     def find_color(self, image, hsv_image, hsv_bounds):
         """
@@ -21,18 +28,16 @@ class PillarDetector:
         """
 
         mask = None
+
         for bound in hsv_bounds:
-            lower = np.array(bound[0])
-            upper = np.array(bound[1])
-            # print(lower)
-            # print(upper)
+            lower, upper = np.array(bound[0]), np.array(bound[1])
             if mask is None:
                 mask = cv2.inRange(hsv_image, lower, upper)
             else:
                 mask |= cv2.inRange(hsv_image, lower, upper)
+        
         image_color = cv2.bitwise_and(image, image, mask=mask)
-        # cv2.imshow("Contours", image_color)
-        # cv2.waitKey(1)
+        
         return image_color
 
     def pre_processing(self, image, blur=5, canny_thres=None, dia=1):
