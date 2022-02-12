@@ -1,8 +1,8 @@
 from machine import UART
 
 class Jetson:
-    def __init__(self, uart_num) -> None:
-        self.uart = UART(2, uart_num)
+    def __init__(self, baudrate) -> None:
+        self.uart = UART(2, baudrate)
     
     def read(self):
         if self.uart.any():
