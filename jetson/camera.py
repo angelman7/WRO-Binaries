@@ -1,21 +1,34 @@
-import logging
+# MIT License
+# Copyright (c) ROBOTONIO
+# See license
+# Using a CSI camera (such as the Raspberry Pi Version 2) connected to a
+# NVIDIA Jetson Nano Developer Kit using OpenCV
+# Drivers for the camera and OpenCV are included in the base image
+
 import cv2
 import imutils
+import logging
+# gstreamer_pipeline returns a GStreamer pipeline for capturing from the CSI camera
+# Defaults to 1280x720 @ 60fps
+# Flip the image by setting the flip_method (most common values: 0 and 2)
+# display_width and display_height determine the size of the window on the screen
+
 
 class Camera:
-    def __init__(self, type=-1, width=640, height=480, framerate=90, flip=0) -> None:
+    def __init__(self, type=-1, width=1280, height=720, framerate=60, flip=0):
         self.width = width
         self.height = height
         self.framerate = framerate
         self.flip = flip
-
+        self.camera = None
         try:
-            if self.type == -1:
-                self.camera = cv2.VideoCapture(self.gstreamer_pipeline())
+            if type == -1:
+                self.camera = cv2.VideoCapture(self.gstreamer_pipeline(), cv2.CAP_GSTREAMER)
             else:
                 self.camera = cv2.VideoCapture(type)
-        except Exception as exc:
-            logging.error("ERROR: Cannot Initialize Camera with type" + str(type))
+        except:
+            logging.error('Fail create camera')
+
 
     def gstreamer_pipeline(self):
         return (
@@ -28,17 +41,32 @@ class Camera:
             "videoconvert ! "
             "video/x-raw, format=(string)BGR ! appsink"
             % (
-                self.width, 
-                self.height, 
-                self.framerate, 
-                self.flip, 
-                self.width, 
-                self.height
+                self.width,
+                self.height,
+                self.framerate,
+                self.flip,
+                self.width,
+                self.height,
             )
         )
-    
-    def get_frame(self):
+
+    def get_frame(self, w=640):
         suc, frame = self.camera.read()
-        if suc:
-            return frame # imutils.resize(frame, self.width)
-        logging.error("ERROR: Failed to capture image")
+        if not suc:
+            logging.error('Fail to capture image')
+            return None
+        return imutils.resize(frame, width=w)
+
+
+def main():
+    camera = Camera(type=-1)
+    while True:
+        frame = camera.get_frame(640)
+        cv2.imshow("frame", frame)
+        key = cv2.waitKey(1) & 0xFF
+        if key == 27:
+            break
+
+
+if __name__ == "__main__":
+    main()
