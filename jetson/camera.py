@@ -59,7 +59,7 @@ class Camera:
 
 
 def main():
-    camera = Camera(type=-1)
+    camera = Camera()
     while True:
         frame = camera.get_frame(640)
         cv2.imshow("frame", frame)
