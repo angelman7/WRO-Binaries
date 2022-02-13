@@ -1,9 +1,20 @@
+from serial import EIGHTBITS, PARITY_NONE, STOPBITS_ONE, Serial
 from time import sleep
-import serial
+
+
+"""
+To prepare the jetson for the serial communication do the following:
+
+git clone https://github.com/JetsonHacksNano/UARTDemo
+cd UARTDemo
+sudo chmod 666 /dev/ttyTHS1
+sudo python3 uart_example.py
+"""
+
 
 class Esp32_Communication:
-    def __init__(self, port="/dev/ttyTHS1", baudrate=115200, bytesize=serial.EIGHTBITS, parity=serial.PARITY_NONE, stopbits=serial.STOPBITS_ONE) -> None:
-        self.serial_port = serial.Serial(
+    def __init__(self, port="/dev/ttyTHS1", baudrate=115200, bytesize=EIGHTBITS, parity=PARITY_NONE, stopbits=STOPBITS_ONE) -> None:
+        self.serial_port = Serial(
             port=port,
             baudrate=baudrate,
             bytesize=bytesize,
@@ -22,3 +33,6 @@ class Esp32_Communication:
         self.serial_port.write(message)
         if message == "\r".encode():
             self.serial_port.write("\n".encode())
+    
+    def close(self):
+        self.serial_port.close()

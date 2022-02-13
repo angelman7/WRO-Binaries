@@ -1,8 +1,9 @@
 from pillar import Pillar
 from camera import Camera
 
-import numpy as np
-import cv2
+from cv2 import COLOR_BGR2HSV, COLOR_BGR2GRAY, RETR_EXTERNAL, CHAIN_APPROX_NONE, FILLED, cvtColor, inRange, bitwise_and, GaussianBlur, \
+                Canny, dilate, findContours, contourArea, arcLength, approxPolyDP, drawContours, boundingRect, rectangle, circle
+from numpy import uint8 as np_uint8, array as np_array, ones as np_ones
 
 class PillarDetector:
     def __init__(self, pillars) -> None:
@@ -10,7 +11,7 @@ class PillarDetector:
 
     def detect_pillars(self, image):
         detected = []
-        hsv_image = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
+        hsv_image = cvtColor(image, COLOR_BGR2HSV)
 
         for pillar in self.pillars:
             image_color = self.find_color(image, hsv_image, pillar.hsv_bounds)
@@ -32,13 +33,13 @@ class PillarDetector:
         mask = None
 
         for bound in hsv_bounds:
-            lower, upper = np.array(bound[0]), np.array(bound[1])
+            lower, upper = np_array(bound[0]), np_array(bound[1])
             if mask is None:
-                mask = cv2.inRange(hsv_image, lower, upper)
+                mask = inRange(hsv_image, lower, upper)
             else:
-                mask |= cv2.inRange(hsv_image, lower, upper)
+                mask |= inRange(hsv_image, lower, upper)
         
-        image_color = cv2.bitwise_and(image, image, mask=mask)
+        image_color = bitwise_and(image, image, mask=mask)
         
         return image_color
 
@@ -53,11 +54,11 @@ class PillarDetector:
         """
         if canny_thres is None:
             canny_thres = [50, 50]
-        image_gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-        image_blur = cv2.GaussianBlur(image_gray, (blur, blur), 1)
-        image_canny = cv2.Canny(image_blur, canny_thres[0], canny_thres[1])
-        kernel = np.ones((5, 5), np.uint8)
-        img_dia = cv2.dilate(image_canny, kernel, iterations=dia)
+        image_gray = cvtColor(image, COLOR_BGR2GRAY)
+        image_blur = GaussianBlur(image_gray, (blur, blur), 1)
+        image_canny = Canny(image_blur, canny_thres[0], canny_thres[1])
+        kernel = np_ones((5, 5), np_uint8)
+        img_dia = dilate(image_canny, kernel, iterations=dia)
         return img_dia
 
     def find_contours(self, image, img_pre, min_area=10, sort=True, filter=0, draw_con=True):
@@ -75,18 +76,18 @@ class PillarDetector:
         img_contours = image.copy()
         # cv2.CHAIN_APPROX_NONE: all the boundary points are stored
         # cv2.CHAIN_APPROX_SIMPLE: keep only points we need (2 points for a line)
-        contours, hierarchy = cv2.findContours(img_pre, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
+        contours, hierarchy = findContours(img_pre, RETR_EXTERNAL, CHAIN_APPROX_NONE)
         for cnt in contours:
-            area = cv2.contourArea(cnt)
+            area = contourArea(cnt)
             if area > min_area:
-                peri = cv2.arcLength(cnt, True)
-                approx = cv2.approxPolyDP(cnt, 0.02 * peri, True)
+                peri = arcLength(cnt, True)
+                approx = approxPolyDP(cnt, 0.02 * peri, True)
                 # print(len(approx))
                 if len(approx) == filter or filter == 0:
-                    if draw_con: cv2.drawContours(img_contours, cnt, -1, (255, 0, 255), 3)
-                    x, y, w, h = cv2.boundingRect(approx)
-                    cv2.rectangle(img_contours, (x, y), (x + w, y + h), (0, 255, 0), 2)
-                    cv2.circle(img_contours, (x + (w // 2), y + (h // 2)), 5, (0, 255, 0), cv2.FILLED)
+                    if draw_con: drawContours(img_contours, cnt, -1, (255, 0, 255), 3)
+                    x, y, w, h = boundingRect(approx)
+                    rectangle(img_contours, (x, y), (x + w, y + h), (0, 255, 0), 2)
+                    circle(img_contours, (x + (w // 2), y + (h // 2)), 5, (0, 255, 0), FILLED)
                     con_found.append([cnt, area, [x, y, w, h]])
 
         if sort:
