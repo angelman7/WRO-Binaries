@@ -1,9 +1,14 @@
-import cv2
-import numpy as np
 from modules.camera import Camera
-import csv
-import argparse
+
+from datetime import datetime
 from pathlib import Path
+import numpy as np
+import argparse
+import logging
+import cv2
+import csv
+
+logging.basicConfig(filename="./jetson.log", level=logging.DEBUG, encoding='utf-8')
 
 """
 The program that will run for the preparation of the 1st system, in the
@@ -26,6 +31,8 @@ parser.add_argument('filename', type=str, default='pillars_values.csv', help="Th
 
 args = parser.parse_args()
 
+logging.basicConfig(filename="./jetson.log", level=logging.DEBUG, encoding='utf-8')
+
 def create_csv_file(data_file):
     with open(data_file, 'w') as f:
         writer = csv.writer(f)
@@ -36,3 +43,9 @@ def add_csv_file(data_file, data):
     with open(data_file, 'a') as f:
         writer = csv.writer(f)
         writer.writerow(data)
+
+try:
+    while True:
+        pass
+except Exception as e:
+    logging.error(str(datetime.now())[0:18] + str(Exception))

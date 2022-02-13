@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-from serial_communication import communicate_with_esp32
+from serial_communication import Esp32_Communication
 from camera import Camera
 import serial
 import time
@@ -30,8 +30,7 @@ def main():
         camera = Camera(type=0)
 
         while True:
-            data = communicate_with_esp32()
-                
+            data = Esp32_Communication.read()
 
             frame = camera.get_frame()
             cv2.imshow("camera class", frame)
@@ -42,11 +41,10 @@ def main():
         serial_port.close()
 
     except KeyboardInterrupt:
-        print("Exiting Program")
+        KeyboardInterrupt("Exiting Program")
 
     except Exception as exception_error:
-        print("Error occurred. Exiting Program")
-        print("Error: " + str(exception_error))
+        Exception(str(exception_error))
 
 if __name__ == '__main__':
     main()

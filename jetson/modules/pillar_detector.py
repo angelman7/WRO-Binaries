@@ -1,8 +1,8 @@
-import cv2
-import numpy as np
 from pillar import Pillar
 from camera import Camera
 
+import numpy as np
+import cv2
 
 class PillarDetector:
     def __init__(self, pillars) -> None:

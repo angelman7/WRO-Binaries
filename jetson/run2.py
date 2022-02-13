@@ -1,3 +1,6 @@
+from datetime import datetime
+import logging
+
 """
 The program that will run on the Jetson Nano 2GB during the 2nd phase of the competition.
 It will detect pillars and report to the 2nd system (ESP32) via serial communication 
@@ -11,3 +14,11 @@ jason data, string etc), will include:
  - distance of the nearest pillar from the camera (estimate)
  - position of the closest pillar to the center of the screen (horizontal and / or vertical)
 """
+
+logging.basicConfig(filename="./jetson.log", level=logging.DEBUG, encoding='utf-8')
+
+try:
+    while True:
+        pass
+except Exception as e:
+    logging.error(str(datetime.now())[0:18] + str(Exception))
