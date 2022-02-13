@@ -1,6 +1,6 @@
 from machine import UART
 
-class Jetson:
+class Jetson_Communication:
     def __init__(self, baudrate=115200) -> None:
         self.uart = UART(2, baudrate)
     
