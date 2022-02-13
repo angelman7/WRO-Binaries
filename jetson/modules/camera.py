@@ -5,7 +5,7 @@
 # NVIDIA Jetson Nano Developer Kit using OpenCV
 # Drivers for the camera and OpenCV are included in the base image
 
-from logging import DEBUG as logging_debug_level, basicConfig as logging_basic_config, error as logging_error
+from logging import DEBUG as logging_debug_level, basicConfig as logging_basic_config, error as logging_error, info as logging_info
 from cv2 import CAP_GSTREAMER, VideoCapture, imshow, waitKey
 from imutils import resize as imutils_resize
 from datetime import datetime
@@ -29,6 +29,7 @@ class Camera:
                 self.camera = VideoCapture(self.gstreamer_pipeline(), CAP_GSTREAMER)
             else:
                 self.camera = VideoCapture(type)
+            logging_info("[" + str(datetime.now())[0:18] + "] Succesfuley opened camera")
         except:
             logging_error("[" + str(datetime.now())[0:18] + "] Failed to load camera")
 

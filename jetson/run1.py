@@ -24,11 +24,14 @@ def main():
 
             while True:
                 data = Esp32.read()
+                if not (data is None):
+                    logging_info("[" + str(datetime.now())[0:18] + "] Message from Esp32: " + str(data))
 
                 frame = camera.get_frame()
                 imshow("Camera", frame)
                 key = waitKey(1) & 0xFF
                 if key == 27:
+                    logging_info("[" + str(datetime.now())[0:18] + "] Program closed due to: Escape key pressed (Esc)")
                     break
             
             Esp32.close()
