@@ -42,14 +42,17 @@ def main():
                 imshow("Camera", frame)
                 key = waitKey(1) & 0xFF
                 if key == 27:
+                    raise KeyError("Program closed due to: Escape key pressed (Esc)")
                     logging_info("[" + str(datetime.now())[0:18] + "] Program closed due to: Escape key pressed (Esc)")
-                    break
             
             Esp32.close()
 
         except KeyboardInterrupt:
             logging_info("[" + str(datetime.now())[0:18] + "] Program closed due to: KeyboardInterupt (Ctrl + C)")
             break
+
+        except KeyError as exception_error:
+            logging_info("[" + str(datetime.now())[0:18] + "] " + str(exception_error))
 
         except Exception as exception_error:
             logging_error("[" + str(datetime.now())[0:18] + "] " + str(exception_error))
