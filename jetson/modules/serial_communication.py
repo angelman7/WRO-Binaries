@@ -26,13 +26,16 @@ class Esp32_Communication:
 
     def read(self):
         if self.serial_port.inWaiting() > 0:
-            data = self.serial_port.read()
-            return data
+            return self.serial_port.readline().decode()
 
     def send(self, message) -> None:
-        self.serial_port.write(message)
-        if message == "\r".encode():
-            self.serial_port.write("\n".encode())
+        try:
+            self.serial_port.write(message.encode())
+            if message == "\r".encode():
+                self.serial_port.write("\n".encode())
+            return True
+        except:
+            return False
     
     def close(self):
         self.serial_port.close()
