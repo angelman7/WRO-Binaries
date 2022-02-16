@@ -3,7 +3,13 @@ All resources(links, etc) are stored here.
 CATEGORIES
 
 - WRO:
-https://github.com/World-Robot-Olympiad-Association/future-engineers-gs
+    https://github.com/World-Robot-Olympiad-Association/future-engineers-gs
 
 - Lego Design/Model
-https://www.mecabricks.com/en/models/JV2yb5pmjyQ
+    https://www.mecabricks.com/en/models/JV2yb5pmjyQ
+
+- To prepare the jetson for the serial communication the following must be done:
+    git clone https://github.com/JetsonHacksNano/UARTDemo
+    cd UARTDemo
+    sudo chmod 666 /dev/ttyTHS1
+    sudo python3 uart_example.py

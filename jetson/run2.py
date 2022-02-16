@@ -1,5 +1,6 @@
 from modules.serial_communication import Esp32_Communication
 from modules.camera import Camera
+from error_codes import *
 
 from logging import DEBUG as logging_debug_level, basicConfig as logging_basic_config, error as logging_error, info as logging_info
 from cv2 import imshow, waitKey
@@ -42,16 +43,15 @@ def main():
                 imshow("Camera", frame)
                 key = waitKey(1) & 0xFF
                 if key == 27:
-                    raise KeyError("Program closed due to: Escape key pressed (Esc)")
-                    logging_info("[" + str(datetime.now())[0:18] + "] Program closed due to: Escape key pressed (Esc)")
+                    raise BufferError(quit_button_error_code)
             
             Esp32.close()
 
         except KeyboardInterrupt:
-            logging_info("[" + str(datetime.now())[0:18] + "] Program closed due to: KeyboardInterupt (Ctrl + C)")
+            logging_info("[" + str(datetime.now())[0:18] + "] " + Keyboard_interrupt_error_code)
             break
 
-        except KeyError as exception_error:
+        except BufferError as exception_error:
             logging_info("[" + str(datetime.now())[0:18] + "] " + str(exception_error))
             break
 
