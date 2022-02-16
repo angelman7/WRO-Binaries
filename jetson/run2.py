@@ -53,6 +53,7 @@ def main():
 
         except KeyError as exception_error:
             logging_info("[" + str(datetime.now())[0:18] + "] " + str(exception_error))
+            break
 
         except Exception as exception_error:
             logging_error("[" + str(datetime.now())[0:18] + "] " + str(exception_error))
