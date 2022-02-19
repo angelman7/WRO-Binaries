@@ -2,7 +2,7 @@ from machine import UART
 from time import sleep
 
 class Jetson_Communication:
-    def init(self, baudrate=115200) -> None:
+    def __init__(self, baudrate=115200) -> None:
         self.uart = UART(2, baudrate)
 
     def read(self):
