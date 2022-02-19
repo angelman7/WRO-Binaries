@@ -7,3 +7,4 @@ The ESP32 folder contains the code that is currently in the ESP32
 
 Current Problems:
     Ένα παξιμαδι δεν μπαινεί
+    HSV FULL αντί HSV σκέτο στο prep2.py
