@@ -44,7 +44,7 @@ class Esp32_Communication:
 
 esp = Esp32_Communication()
 while True:
-    suc = esp.send(str(randint(0, 115)) + "\n") # sends angle for esp32 servo to turn
+    suc = esp.send(str(randint(40, 115)) + "\n") # sends angle for esp32 servo to turn
     if suc:
         print("Message succesfully sent!")
     else:
