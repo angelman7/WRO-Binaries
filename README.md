@@ -6,3 +6,5 @@ The ESP32 folder contains the code that is currently in the ESP32
 
 Project ToDo list: (Trello)
   - https://trello.com/b/YYgFc8AK/future-engeneers-project
+
+# Method
