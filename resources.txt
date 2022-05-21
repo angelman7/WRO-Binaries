@@ -12,4 +12,3 @@ CATEGORIES
     git clone https://github.com/JetsonHacksNano/UARTDemo
     cd UARTDemo
     sudo chmod 666 /dev/ttyTHS1
-    sudo python3 uart_example.py
