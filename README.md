@@ -1,4 +1,4 @@
-# WRO---2022---Jetson
+# WRO - NameNotFound
 
 This is the project for the WRO 2022 Contest: Future Engineers
 The jetson folder contains the code that is currently in the jetson
