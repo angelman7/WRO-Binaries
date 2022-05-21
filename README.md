@@ -9,7 +9,6 @@ Project ToDo list: (Trello)
 
 # The Hardware
 At the start we used an EV3 Lego Mindstorms Brick to check the speed of the car and whether or not it was drivable.
-Then Jetson. Then it was ready
 
 # The Software
 The software of the car is split into two parts:
@@ -23,8 +22,8 @@ The software of the car is split into two parts:
   Finaly the program will save the values into a seperate text file for them to be used by the other programs
 
 2) The Run 1 file:
-  dadadadada
+  dadadadadajjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj
 4) The Run 2 file:
-  dadadafafafd
+  dadadafafafdhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
 
 # Credits - Libraries
