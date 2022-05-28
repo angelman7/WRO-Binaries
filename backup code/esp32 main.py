@@ -345,7 +345,7 @@ class ColorSensor:
     def is_awake(self):
         return self._read_byte(_ENABLE_CS) & _PON_CS
 
-    def set_wait_time(self, t):
+    def set_wait_time(self, t):d
         pass
 
     def id(self):
@@ -717,7 +717,7 @@ class Car:
                 print(color_num)
                 if self.turn_direction == 0:
                     self.turn_direction = color_num
-                current_time = time_ns() // 1000000
+                current_time = time_ns() // 1000000d
                 if color_num == self.turn_direction and current_time - self.start_turning_ms > self.turn_delay_ms:
                     if self.turn_direction > 0: # right turn
                         self.current_directions_index = (self.current_directions_index + 1) % 4
@@ -769,7 +769,7 @@ class Car:
     def drive_straight(self, turns=12, kp=1.5, kd=1):
         # print(self.compass.read_degrees())
         # print(self.compass.orientation)
-        self.compass.init_orientation()
+        # self.compass.init_orientation()
         # print(self.compass.orientation)
         sleep(1)
         compass_error = lasterror = 0
@@ -986,7 +986,7 @@ class Car:
         else:
             self.display.show_text("DISCONNECTED!")
             return None
-        #self.compass.init_orientation()
+        self.compass.init_orientation()
         self.init_jetson_config()
         self.jetson_drive()
 
