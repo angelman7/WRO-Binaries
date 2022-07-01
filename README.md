@@ -21,9 +21,9 @@ At the start we used an EV3 Lego Mindstorms Brick to check the speed of the car 
 
 Then, concerning the control of the motors (DC motor that is responsible for the speed of the car, servo motor that is responsible for the steering of the car), we changed to ESP32 a microcontroller. The ESP32 also controls all the sensors and other tools used in our project:
 * `1 color sensor` which detects the orange and blue lines
-* `2 ultrasonic sensors` which detects the destance of the vehicle to the walls
+* `2 ultrasonic sensors` which detect the destance of the vehicle to the walls
 * `1 OLED screen` which displays some info about the vehicle
-* `3 selection buttons` which controls what is shown on the OLED screen
+* `3 selection buttons` which control what is shown on the OLED screen
 * `1 potentiometer` which can be used to change
      
 We are also using a Jetson Nano using the Linux OS, which is responsible for the camera and processing its frames. The microcontroller and the computer communicate through UART Serial communication, which in terms of hardware is done connecting each unit's TX port with the other unit's RX port and vice versa.
