@@ -10,6 +10,8 @@ Project ToDo list: (Trello)
 ## The Hardware
 At the start we used an EV3 Lego Mindstorms Brick to check the speed of the car and whether or not it was drivable.
 
+Then, concerning the control of the motors (DC motor that is responsible for the speed of the car, servo motor that is responsible for the steering of the car), we changed to ESP32 a microcontroller. The ESP32 also controls all the sensors and other tools used in our project (1 color sensor, 2 ultrasonic sensors, 1 OLED screen, 3 selection buttons, 1 potentiometer). We are also using a Jetson Nano using the Linux OS, which is responsible for the camera and processing its frames. The microcontroller and the computer communicate through UART Serial communication, which in terms of hardware is done connecting each unit's TX port with the other unit's RX port and vice versa.
+
 ## The Software
 The software of the car is split into two parts:
  - ESP32 programs (split into 3 parts due to the ESP32 limitations) which contains the programs:
@@ -18,7 +20,8 @@ The software of the car is split into two parts:
       * run1.py
       * run2.py
    - modules:
-      * ssd1306
+      * ssd1306.py
+      * hscr04.py
  
  - Jetson programs
    - main programs:
