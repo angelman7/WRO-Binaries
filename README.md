@@ -14,25 +14,23 @@ Then, concerning the control of the motors (DC motor that is responsible for the
 
 ## The Software
 The software of the car is split into two parts:
- - ESP32 programs (split into 3 parts due to the ESP32 limitations) which contains the programs:
-   - main programs:
-      * configuration.py
-      * run1.py
-      * run2.py
-   - modules:
-      * ssd1306.py
-      * hscr04.py
+ 1) ESP32 programs (split into 3 parts due to the ESP32 limitations) which contains the programs:
+     ├─── configuration.py
+     ├─── run1.py
+     ├─── run2.py
+     └─── modules
+           ├─── ssd1306.py
+           └─── hscr04.py
  
- - Jetson programs
-   - main programs:
-      * car_control.py (the main program that will run during the competition)
-      * configuration.py
-   - modules:
-     * serial_communication.py (module that established UART serial communication between the ESP32 and the Jetson Nano)
-     * camera.py
-     * line_following.py
-     * cvtools.py
-     * object_following
+ 2) Jetson programs
+     ├─── car_control.py (the main program that will run during the competition)
+     ├─── configuration.py
+     └─── modules
+           ├─── serial_communication.py (module that established UART serial communication between the ESP32 and the Jetson Nano)
+           ├─── camera.py
+           ├─── line_following.py
+           ├─── cvtools.py
+           └─── object_following
      
      * to be continued
 
