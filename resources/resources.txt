@@ -2,6 +2,9 @@ All resources(links, etc) are stored here.
 
 CATEGORIES
 
+- IMAGE ANALYSIS:
+https://www.unitconverters.net/typography/pixel-x-to-centimeter.htm
+
 - WRO:
     https://github.com/World-Robot-Olympiad-Association/future-engineers-gs
 
