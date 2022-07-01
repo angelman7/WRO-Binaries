@@ -14,7 +14,7 @@ Then, concerning the control of the motors (DC motor that is responsible for the
 
 ## The Software
 The software of the car is split into two parts:
- 1) ESP32 programs (split into 3 parts due to the ESP32 limitations) which contains the programs:
+ 1) ESP32 programs (split into 3 programs due to the ESP32 limitations) which contains the programs:
      - configuration.py
      - run1.py
      - run2.py
@@ -41,10 +41,10 @@ configures the basic settings and values needed for the color sensor to track th
 - Firstly, the program can configure the compass by asking the user to configure the robot in the four directions of the level (Forward, Backward, Left, Right). #These will help the run program know its position later when it will run.
    
 2) The Run 1 file:
-  dadadadadajjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj
+  TBA
   
 3) The Run 2 file:
-  dadadafafafdhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh
+  TBA
    
  **JETSON NANO PROGRAMS**
  1) The Configuration file:
