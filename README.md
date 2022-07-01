@@ -19,18 +19,18 @@ The software of the car is split into two parts:
      - run1.py
      - run2.py
      - modules
-           - ssd1306.py
-           - hscr04.py
+           * ssd1306.py
+           * hscr04.py
  
  2) Jetson programs
      - car_control.py (the main program that will run during the competition)
      - configuration.py
      - modules
-           - serial_communication.py (module that established UART serial communication between the ESP32 and the Jetson Nano)
-           - camera.py
-           - line_following.py
-           - cvtools.py
-           - object_following
+           * serial_communication.py (module that established UART serial communication between the ESP32 and the Jetson Nano)
+           * camera.py
+           * line_following.py
+           * cvtools.py
+           * object_following
      
      * to be continued
 
