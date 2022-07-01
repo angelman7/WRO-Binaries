@@ -38,7 +38,7 @@ The software of the car is split into two parts:
 **ESP32 PROGRAMS**
 1) The Configuration file:
 configures the basic settings and values needed for the color sensor to track the game mat's orange and blue lines correctly, the hsv values of the pillars, the left and right value limits of the servo motor, and the digital compass' values.
-#   - Firstly, the program can configure the compass by asking the user to configure the robot in the four directions of the level (Forward, Backward, Left, Right). #These will help the run program know its position later when it will run.
+- Firstly, the program can configure the compass by asking the user to configure the robot in the four directions of the level (Forward, Backward, Left, Right). #These will help the run program know its position later when it will run.
    
 2) The Run 1 file:
   dadadadadajjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj
