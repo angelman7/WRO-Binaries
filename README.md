@@ -19,9 +19,8 @@ The software of the car is split into two parts:
      - run1.py
      - run2.py
      - modules
-    
-           * ssd1306.py
-           * hscr04.py
+         - ssd1306.py
+         - hscr04.py
  
  2) Jetson programs
      - car_control.py (the main program that will run during the competition)
