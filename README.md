@@ -54,9 +54,9 @@ On the software part the following programs and modules are used:
  **Modules**
  [...]
 
-## Credits - Libraries
+# Credits - Libraries
 
-**Grove I2C Bus**
+## Grove I2C Bus
 License
 
 The MIT License (MIT)
