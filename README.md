@@ -51,9 +51,7 @@ The software of the car is split into two parts:
        - pillar.py
        - wall.py
    
- **JETSON NANO PROGRAMS**
- 1) The Configuration file:
-The program can configure the colors of the pillars that must be detected. This is done by asking the user to take photos of the desired pillar. Then the user selects the pillar from the image by selecting a rectangle of the pillar with the specific color. The program selects the upper and lower values of color (H min, H max, S min, S max, V min, V max) it has selected(These can be changed by the user using the 6 trackbars that appear on a new window). There will also be a second window that will show what the image contains within these margins(upper and lower).
-Finaly, the program will save the values into a seperate text file for them to be used by the other programs
+ **Car.py**
+ [aaa]
 
 ## Credits - Libraries
