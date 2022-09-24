@@ -16,7 +16,7 @@ This repository contains engineering materials of a self-driven vehicle's model 
 
 _This part must be filled by participants with the technical clarifications about the code: which modules the code consists of, how they are related to the electromechanical components of the vehicle, and what is the process to build/compile/upload the code to the vehicle’s controllers._
   
-# The Hardware
+### The Hardware
 The Hardware consinsts of a Jetson Nano (running Linux) thats is the "mind" of the robot as it is where all the code is run.
 
 Concerning the movement of the vehicle, a DC and a servo motor are used. The DC motor is responsible for the speed of the car while the servo motor is responsible for the steering of the car.
