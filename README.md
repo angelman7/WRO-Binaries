@@ -49,6 +49,7 @@ This is the main program that runs during both the run 1 and the run2 challenge.
 **1) Run 1:** (runs the program for the first challenge)
 
 **2) Run 2:** (runs the program for the second challenge)
+
 **3) Info:**
 This function shows the current values of sensors while the program is running. This can be helpful for debugging reasons.
 Such sensors might be:
