@@ -51,14 +51,14 @@ This is the main program that runs during both the run 1 and the run2 challenge.
 **Run 2: (runs the program for the second challenge)**
 **Info:**
 This function shows the current values of sensors while the program is running. This can be helpful for debugging reasons.
-Such sensors might 
+Such sensors might be:
 
 **Configuration:**
 This function is used to calibrate each sensor: 
- - the color sensor by taking various captures of each line on the field to create a range of hsv values for each color respectively.
- - the compass by spinning the vehicle around in various directions and axes for a few seconds so that the compass "gets a grasp" of its surroundings.
- - the compass orientation by matching values to all 4 sides of the field in order for the robot to know which side it starts from during both run 1 and run 2 challenges.
- - the camera by taking photos of the pillars in order to then manually create a range of hsv values so that the cameraq recognises the color of each pillar, and by taking photos of the walls to proceed through the same process to detect the walls around and inside the field.
+ - The `color sensor` by taking various captures of each line on the field to create a range of hsv values for each color respectively.
+ - The `compass` by spinning the vehicle around in various directions and axes for a few seconds so that the compass "gets a grasp" of its surroundings.
+ - The `compass orientation` by matching values to all 4 sides of the field in order for the robot to know which side it starts from during both run 1 and run 2 challenges.
+ - The `camera` by taking photos of the pillars in order to then manually create a range of hsv values so that the camera recognises the color of each pillar, and by taking photos of the walls to proceed through the same process to detect the walls around and inside the field.
 
 
 **Cnf.txt**
