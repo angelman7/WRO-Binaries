@@ -17,27 +17,39 @@ This repository contains engineering materials of a self-driven vehicle's model 
 _This part must be filled by participants with the technical clarifications about the code: which modules the code consists of, how they are related to the electromechanical components of the vehicle, and what is the process to build/compile/upload the code to the vehicle’s controllers._
   
 ## The Hardware
-At the start we used an EV3 Lego Mindstorms Brick to check the speed of the car and whether or not it was drivable.
+The Hardware consinsts of a Jetson Nano (running Linux) thats is the "mind" of the robot as it is where all the code is run.
 
-Then, concerning the control of the motors (DC motor that is responsible for the speed of the car, servo motor that is responsible for the steering of the car), we changed to ESP32 a microcontroller. The ESP32 also controls all the sensors and other tools used in our project:
+Concerning the movement of the vehicle, a DC and a servo motor are used. The DC motor is responsible for the speed of the car while the servo motor is responsible for the steering of the car.
+
+The Jetson Nano also controls all the sensors used in our project:
 * `1 color sensor` which detects the orange and blue lines
-* `2 ultrasonic sensors` which detect the destance of the vehicle to the walls
 * `1 OLED screen` which displays some info about the vehicle
 * `3 selection buttons` which control what is shown on the OLED screen
-* `1 potentiometer` which can be used to change
+* `1 camera` which is used to detect what is in front of the vehicle
      
-We are also using a Jetson Nano using the Linux OS, which is responsible for the camera and processing its frames. The microcontroller and the computer communicate through UART Serial communication, which in terms of hardware is done connecting each unit's TX port with the other unit's RX port and vice versa.
+We are also using a Jetson Nano using the Linux OS, which is using all the input 
 
 ## The Software
 The software of the car is split into two parts:
    - car.py (the main program that will run during the competition using the modules mentioned below)
-   - configuration.py (the program
+   - cnf.txt (that contains many variables used by the car.py that were found through contious testing, like the color codes of the lines etc.)
    - modules
-       - serial_communication.py (module that established UART serial communication between the ESP32 and the Jetson Nano)
+       - bmm150.py
+       - button.py
        - camera.py
-       - line_following.py
-       - cvtools.py
-       - object_following
+       - color.py
+       - compass.py
+       - cvtool.py
+       - distance.py
+       - drive.py
+       - grove_i2c_bus.py
+       - grove_i2c_color_sesor_v2.py
+       - line.py
+       - line2turn.py
+       - oled.py
+       - oled_sample.py
+       - pillar.py
+       - wall.py
    
  **JETSON NANO PROGRAMS**
  1) The Configuration file:
