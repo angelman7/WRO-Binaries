@@ -30,15 +30,14 @@ On the software part the following programs and modules are used:
    - cnf.txt (that contains many variables used by the car.py that were found through contious testing, like the color codes of the lines etc.)
    - modules
        - bmm150.py
-       - button.py (contains the class about the buttons that is used to detect whether or not a button is pressed)
-       - camera.py (contains the class used for the buttons and is used to detect whether or not a button is pressed)
-       - color.py (contains the class used for the color sensor and to check what it detects and whether or not it detects any blue or orange lines)
-       - compass.py (contains the class used for 
-       - cvtool.py (contains the class used for 
-       - distance.py (contains the class used for 
-       - drive.py (contains the class used for 
-       - grove_i2c_bus.py (contains the class used for 
-       - grove_i2c_color_sesor_v2.py (contains the class used for 
+       - button.py (contains the class used to control the buttons that is used to detect whether or not a button is pressed)
+       - camera.py (contains the class used to read the camera)
+       - color.py (contains the class used for the color sensor and to check what it detects)
+       - compass.py (contains the class used to controll the compass and read the current orientation)
+       - cvtool.py (contains the class used to manage the camera and detect what and what type of obstacle is in front of the vehicle)
+       - drive.py (contains the class used for control and management of both the DC and servo)
+       - grove_i2c_bus.py (contains the class used to control the I2C communication for both the OLED display and the Color Sensor)
+       - grove_i2c_color_sesor_v2.py (a library 
        - line.py (contains the class used for 
        - line2turn.py (contains the class used for 
        - oled.py (contains the class used for 
@@ -56,3 +55,29 @@ On the software part the following programs and modules are used:
  [...]
 
 ## Credits - Libraries
+
+**Grove I2C Bus**
+License
+
+The MIT License (MIT)
+
+Grove Base Hat for the Raspberry Pi, used to connect grove sensors.
+Copyright (C) 2018  Seeed Technology Co.,Ltd. 
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
