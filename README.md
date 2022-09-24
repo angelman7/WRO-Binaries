@@ -25,35 +25,35 @@ The Jetson Nano also controls all the sensors used in our project:
 We are also using a Jetson Nano using the Linux OS, which is using all the input sensors mentioned above
 
 On the software part the following programs and modules are used:
-   - `car.py` (the main program that will run during the competition using the modules mentioned below)
-   - `cnf.txt` (that contains many variables used by the car.py that were found through contious testing, like the color codes of the lines etc.)
+   - `car.py` contains the main program that will run during the competition using the modules mentioned below.
+   - `cnf.txt` contains many variables used by the car.py that were found through contious testing, like the color codes of the lines etc.
    - `modules`
        - `bmm150.py`
-       - `button.py` (contains the class used to control the buttons that is used to detect whether or not a button is pressed)
-       - `camera.py` (contains the class used to read the camera)
-       - `color.py` (contains the class used for the color sensor and to check what it detects)
-       - `compass.py` (contains the class used to controll the compass and read the current orientation)
-       - `cvtool.py` (contains the class used to manage the camera and detect what and what type of obstacle is in front of the vehicle)
-       - `drive.py` (contains the class used for control and management of both the DC and servo)
-       - `grove_i2c_bus.py` (contains the bus used by the program grove_i2c_color_sensor_v2.py)
-       - `grove_i2c_color_sesor_v2.py` (contains the class used to control the I2C communication for both the OLED display and the Color Sensor)
-       - `line2turn.py` (contains the class used to detect and recognise the blue and orange lines on the field ground)
-       - `oled.py` (contains the class used to control the OLED display and showw text on it)
-       - `oled_sample.py` (a program used to debug the OLED display)
-       - `pillar.py` (contains the class used by the camera to manage and detect and avoid any pillars that might be in front of the vehicle correctly)
-       - `wall.py` (contains the class used by the camera to manage and detect and avoid any walls that might be in front of the vehicle correctly imminent)
+       - `button.py` contains the class used to control the buttons that is used to detect whether or not a button is pressed.
+       - `camera.py` contains the class used to read the camera.
+       - `color.py` contains the class used for the color sensor and to check what it detects.
+       - `compass.py` contains the class used to controll the compass and read the current orientation.
+       - `cvtool.py` contains the class used to manage the camera and detect what and what type of obstacle is in front of the vehicle.
+       - `drive.py` contains the class used for control and management of both the DC and servo.
+       - `grove_i2c_bus.py` contains the bus used by the program grove_i2c_color_sensor_v2.py.
+       - `grove_i2c_color_sesor_v2.py` contains the class used to control the I2C communication for both the OLED display and the Color Sensor.
+       - `line2turn.py` contains the class used to detect and recognise the blue and orange lines on the field ground.
+       - `oled.py` contains the class used to control the OLED display and showw text on it.
+       - `oled_sample.py` a program used to debug the OLED display.
+       - `pillar.py` contains the class used by the camera to manage and detect and avoid any pillars that might be in front of the vehicle correctly.
+       - `wall.py` contains the class used by the camera to manage and detect and avoid any walls that might be in front of the vehicle correctly imminent.
    
  **Car.py**
 This is the main program that runs during both the run 1 and the run2 challenge. It starts by displaying a menu screen through the OLED display from which one can choose and execute, using the three buttons, any of the following options: (Each option is a separate function inside Car.py)
  
-**Run 1: (runs the program for the first challenge)**
+**`Run 1`: (runs the program for the first challenge)**
 
-**Run 2: (runs the program for the second challenge)**
-**Info:**
+**`Run 2`: (runs the program for the second challenge)**
+**`Info`:**
 This function shows the current values of sensors while the program is running. This can be helpful for debugging reasons.
 Such sensors might be:
 
-**Configuration:**
+**`Configuration`:**
 This function is used to calibrate each sensor: 
  - The `color sensor` by taking various captures of each line on the field to create a range of hsv values for each color respectively.
  - The `compass` by spinning the vehicle around in various directions and axes for a few seconds so that the compass "gets a grasp" of its surroundings.
