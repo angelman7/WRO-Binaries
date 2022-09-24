@@ -70,7 +70,7 @@ This function is used to calibrate each sensor:
 
 # Credits - Libraries
 
-## Grove I2C Bus
+**1) Grove I2C Bus**
 **License**
 
 The MIT License (MIT)
@@ -96,5 +96,5 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
-## Grove I2C Color Sensor
+**2) Grove I2C Color Sensor**
 Library for Grove - I2C Color Sensor V2(https://www.seeedstudio.com/Grove-I2C-Color-Sensor-V2-p-2890.html)
