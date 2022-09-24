@@ -52,6 +52,10 @@ The software of the car is split into two parts:
        - wall.py
    
  **Car.py**
- [aaa]
+ [...]
+ **Cnf.txt**
+ [...]
+ **Modules**
+ [...]
 
 ## Credits - Libraries
