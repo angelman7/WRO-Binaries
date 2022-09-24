@@ -68,10 +68,10 @@ This function is used to calibrate each sensor:
 
 
 **Cnf.txt**
-[...]
+The text file where values are stored after calibration, in order for them to be accessed and used during the run1 and run2 programs. 
 
 **Modules**
-[...]
+This is a folder that contains the modules that are used by the car.py program and by its numerous functions. 
 
 # Credits - Libraries
 
