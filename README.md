@@ -53,8 +53,11 @@ This function runs the program for the first challenge. It runs on a loop. Insid
 This function runs the program for the second challenge. It has multiple similarities to the run 1 function that runs in the first challenge. The only notable difference is that the program proceeds to check for pillars after the wall check. After the detection of a pillar, if it is present, the program will turn right or left according to the color of the pillar (red or green). 
 
 **3) Info:**
-This function shows the current values of sensors while the program is running. This can be helpful for debugging reasons.
-Such sensors might be:
+This function shows the current values that each sensor returns while the program is running (used for debugging reasons)
+These sensors are:
+ - The `color sensor`
+ - The `camera`
+ - The `compass`
 
 **4) Configuration:**
 This function is used to calibrate each sensor: 
