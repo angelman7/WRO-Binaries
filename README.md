@@ -27,7 +27,7 @@ The Jetson Nano also controls all the sensors used in our project:
 * `3 selection buttons` which control what is shown on the OLED screen
 * `1 camera` which is used to detect what is in front of the vehicle
      
-We are also using a Jetson Nano using the Linux OS, which is using all the input 
+We are also using a Jetson Nano using the Linux OS, which is using all the input sensors mentioned above
 
 ## The Software
 The software of the car is split into two parts:
