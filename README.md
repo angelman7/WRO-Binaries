@@ -46,14 +46,14 @@ On the software part the following programs and modules are used:
  **Car.py**
 This is the main program that runs during both the run 1 and the run2 challenge. It starts by displaying a menu screen through the OLED display from which one can choose and execute, using the three buttons, any of the following options: (Each option is a separate function inside Car.py)
  
-**Run 1:** (runs the program for the first challenge)
+**1) Run 1:** (runs the program for the first challenge)
 
-**Run 2:** (runs the program for the second challenge)
-**Info:**
+**2) Run 2:** (runs the program for the second challenge)
+**3) Info:**
 This function shows the current values of sensors while the program is running. This can be helpful for debugging reasons.
 Such sensors might be:
 
-**Configuration:**
+**4) Configuration:**
 This function is used to calibrate each sensor: 
  - The `color sensor` by taking various captures of each line on the field to create a range of hsv values for each color respectively.
  - The `compass` by spinning the vehicle around in various directions and axes for a few seconds so that the compass "gets a grasp" of its surroundings.
