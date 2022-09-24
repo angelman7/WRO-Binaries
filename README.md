@@ -32,7 +32,7 @@ On the software part the following programs and modules are used:
        - bmm150.py
        - button.py (contains the class about the buttons that is used to detect whether or not a button is pressed)
        - camera.py (contains the class used for the buttons and is used to detect whether or not a button is pressed)
-       - color.py (contains the class used for the color sensor
+       - color.py (contains the class used for the color sensor and to check what it detects and whether or not it detects any blue or orange lines)
        - compass.py (contains the class used for 
        - cvtool.py (contains the class used for 
        - distance.py (contains the class used for 
