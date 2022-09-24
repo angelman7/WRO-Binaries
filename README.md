@@ -99,4 +99,5 @@ This function is used to calibrate each sensor:
 
 
  - **Grove I2C Color Sensor**
+   
    Library for Grove - I2C Color Sensor V2(https://www.seeedstudio.com/Grove-I2C-Color-Sensor-V2-p-2890.html)
