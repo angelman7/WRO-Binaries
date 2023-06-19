@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+
+<launch>
+    <node pkg="carpkg" type="dc.py" name="dc_node">
+
+    </node>
+<!-- 
+    <node pkg="carpkg" type="distances.py" name="distances_node">
+
+    </node>
+
+    <node pkg="carpkg" type="gyro.py" name="gyro_node">
+
+    </node>
+
+        <node pkg="carpkg" type="run1.py" name="remote_node"> -->
+
+    <!-- ?</node> -->
+    
+</launch>
