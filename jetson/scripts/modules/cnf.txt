@@ -1,0 +1,2 @@
+{"data": "orange", "hmin": 0, "hmax": 30, "smin": 50, "smax": 100, "vmin": 20, "vmax": 80}
+{"data": "blue", "hmin": 65, "smin": 80, "vmin": 0, "hmax": 100, "smax": 108, "vmax": 70}
