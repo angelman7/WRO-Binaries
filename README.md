@@ -16,6 +16,9 @@ First things first, the hardware consinsts of a Jetson Nano (running Linux) that
 
 Concerning the movement of the vehicle, a DC and a servo motor are used. The DC motor is responsible for the speed of the car while the servo motor is responsible for the steering of the car.
 
+The Jetson Nano also utilises the power of R.O.S.(Robot Operating System) which is a set of software libraries and tools that let us build robot applications as this. From drivers to state-of-the-art algorithms, and with powerful developer tools.
+Using R.O.S. all programs (besides the modules) can become a node and is able to publish and get information from other nodes through topics which is the perfect way for these programs to communicate.
+
 The Jetson Nano also controls all the sensors used in our project:
 * `1 color sensor` which detects the orange and blue line
 * `2 laser distance sensors` that are used to determine the distance to the nearest wall from the fron oh the vehicle.
