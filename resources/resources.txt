@@ -1,17 +1,7 @@
 All resources(links, etc) are stored here.
 
-CATEGORIES
-
-- IMAGE ANALYSIS:
-https://www.unitconverters.net/typography/pixel-x-to-centimeter.htm
-
 - WRO:
     https://github.com/World-Robot-Olympiad-Association/future-engineers-gs
 
-- Lego Design/Model
-    https://www.mecabricks.com/en/models/JV2yb5pmjyQ
-
-- To prepare the jetson for the serial communication the following must be done:
-    git clone https://github.com/JetsonHacksNano/UARTDemo
-    cd UARTDemo
-    sudo chmod 666 /dev/ttyTHS1
+- R.O.S. (Robot Operating System)
+		https://www.ros.org
