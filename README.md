@@ -1,6 +1,6 @@
-# WRO - NameNotFound
+# WRO - Binaries
 
-This repository contains engineering materials of a self-driven vehicle's model participating in the WRO Future Engineers competition in the season 2022 for the team NameNotFound.
+This repository contains engineering materials of a self-driven vehicle's model participating in the WRO Future Engineers competition in the season 2022 for the team Binaries.
 
 ## Content
 * `t-photos` contains 2 photos of the team (an official one and one funny photo with all team members).
@@ -17,17 +17,19 @@ First things first, the hardware consinsts of a Jetson Nano (running Linux) that
 Concerning the movement of the vehicle, a DC and a servo motor are used. The DC motor is responsible for the speed of the car while the servo motor is responsible for the steering of the car.
 
 The Jetson Nano also controls all the sensors used in our project:
-* `1 color sensor` which detects the orange and blue lines
-* `1 OLED screen` which displays some info about the vehicle
-* `3 selection buttons` which help navigate through the menu and options of the OLED display and execute any program
+* `1 color sensor` which detects the orange and blue line
+* `2 laser distance sensors` that are used to determine the distance to the nearest wall from the fron oh the vehicle.
+* `1 gyroscope / accelerometer` that is constantly use to determine and control the orientation of the vehicle.
 * `1 camera` which is used to detect what is in front of the vehicle
      
 We are also using a Jetson Nano using the Linux OS, which is using all the input sensors mentioned above
 
 On the software part the following programs and modules are used:
-   - `car.py` contains the main program that will run during the competition using the modules mentioned below.
-   - `cnf.txt` contains many variables used by the car.py that were found through contious testing, like the color codes of the lines etc.
+   - `pillar.py` contains the program that has the finctionality of detecting the pillars and their position.
+   - `run1.py` contains the main program that will run during the first part of the competition using the modules mentioned below.
+   - `run2.py` contains the main program that will run during the second part of the competition using the modules mentioned below.
    - `modules`
+       - `cnf.txt` contains many variables used by the car.py that were found through contious testing, like the color codes of the lines etc.
        - `bmm150.py`
        - `button.py` contains the class used to control the buttons that is used to detect whether or not a button is pressed.
        - `camera.py` contains the class used to read the camera.
@@ -40,7 +42,6 @@ On the software part the following programs and modules are used:
        - `line2turn.py` contains the class used to detect and recognise the blue and orange lines on the field ground.
        - `oled.py` contains the class used to control the OLED display and showw text on it.
        - `oled_sample.py` a program used to debug the OLED display.
-       - `pillar.py` contains the class used by the camera to manage and detect and avoid any pillars that might be in front of the vehicle correctly.
        - `wall.py` contains the class used by the camera to manage and detect and avoid any walls that might be in front of the vehicle correctly imminent.
    
  **Car.py**
