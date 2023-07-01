@@ -26,7 +26,7 @@ The Jetson Nano also controls all the sensors used in our project:
 * `1 camera` which is used to detect what is in front of the vehicle
 
 On the software part the following programs and modules are used:
-   - `pillar.py` contains the program that has the finctionality of detecting the pillars and their position.
+   - `pillar.py`
    - `run1.py` contains the main program that will run during the first part of the competition using the modules mentioned below.
    - `run2.py` contains the main program that will run during the second part of the competition using the modules mentioned below.
    - `modules`
@@ -44,35 +44,20 @@ On the software part the following programs and modules are used:
        - `oled.py` contains the class used to control the OLED display and showw text on it.
        - `oled_sample.py` a program used to debug the OLED display.
        - `wall.py` contains the class used by the camera to manage and detect and avoid any walls that might be in front of the vehicle correctly imminent.
-   
- **Car.py**
-This is the main program that runs during both the run 1 and the run2 challenge. It starts by displaying a menu screen through the OLED display from which one can choose and execute, using the three buttons, any of the following options: (Each option is a separate function inside Car.py)
- 
-**1) Run 1:**
-This function runs the program for the first challenge. It runs on a loop. Inside the loop, there is a hierarchy of activities that are performed for each frame of the camera. Firstly, the program checks whether or not the vehicle is dangerously close to a wall. If any walls are detected, using the camera, image analysis is performed, in order to calculate the angle and distance of the detected wall(s). Then, based on that information, a pid algorithm is used to calculate the steering angle of the vehicle. Then, the vehicle turns to avoid the wall. Alternatively, if no walls are detected it checks, through the Color Sensor, whether or not there are any lines. If any lines are detected, blue or orange, the vehicle performes a 90 degree turn to move into the next section of the field. Lastly, if none of the above are detected, the compass is used and the vehicle turns to be as paralell as possible to the wall. After it has completed all the turns it stops in the starting sector. 
 
-**2) Run 2:** 
-This function runs the program for the second challenge. It has multiple similarities to the run 1 function that runs in the first challenge. The only notable difference is that the program proceeds to check for pillars after the wall check. After the detection of a pillar, if it is present, the program will turn right or left according to the color of the pillar (red or green). 
+**run1.py**
+This program runs the program for the first challenge. It runs on a loop. Inside the loop, there is a hierarchy of activities that are performed for each frame of the camera. Firstly, the program checks, using the front distance sensors, whether or not the vehicle is dangerously close to a wall. Then, based on that information, a pid algorithm is used to calculate the steering angle of the vehicle. Then, the vehicle turns to avoid the wall. Alternatively, if no walls are detected it checks, through the distance sensor, whether or not the distance on the left or the right is over 2m, which signifies a left or right turn respectively. If any such distance is detected, left or right, the vehicle performes a 90 degree turn to move into the next section of the field. As the program uses an algorithm for the steering direction to stay parrallel to the walls, which is done using an angle target on the compass, a turn can be effectively executed by simply incrementing or dicrementing the target of the algorith by 90 degrees. After it has completed all the turns it stops in the starting sector. 
 
-**3) Info:**
-This function shows the current values that each sensor returns while the program is running (used for debugging reasons)
-These sensors are:
- - The `color sensor`
- - The `camera`
- - The `compass`
+**run2.py** 
+This program runs the program for the second challenge. It has multiple similarities to the run 1 function that runs in the first challenge. The only notable difference is that the program proceeds to check for pillars after the wall check. After the detection of a pillar, if it is present, the program will turn right or left, if needed, according to the distance, size and color (red or green) of the pillar. 
 
-**4) Configuration:**
-This function is used to calibrate each sensor: 
- - The `color sensor` by taking various captures of each line on the field to create a range of hsv values for each color respectively.
- - The `compass` by spinning the vehicle around in various directions and axes for a few seconds so that the compass "gets a grasp" of its surroundings.
- - The `compass orientation` by matching values to all 4 sides of the field in order for the robot to know which side it starts from during both run 1 and run 2 challenges.
- - The `camera` by taking photos of the pillars in order to then manually create a range of hsv values so that the camera recognises the color of each pillar, and by taking photos of the walls to proceed through the same process to detect the walls around and inside the field.
+**pillar.py**
+This file contains the program that has the finctionality of detecting the pillars and their position.
 
+**cnf.txt**
+The text file where values are stored after calibration, in order for them to be accessed and used by the run1 and run2 programs. 
 
-**Cnf.txt**
-The text file where values are stored after calibration, in order for them to be accessed and used during the run1 and run2 programs. 
-
-**Modules**
+**Modules Folder**
 This is a folder that contains the modules that are used by the car.py program and by its numerous functions. 
 
 # Credits - Libraries
