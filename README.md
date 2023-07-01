@@ -24,8 +24,6 @@ The Jetson Nano also controls all the sensors used in our project:
 * `2 laser distance sensors` that are used to determine the distance to the nearest wall from the fron oh the vehicle.
 * `1 gyroscope / accelerometer` that is constantly use to determine and control the orientation of the vehicle.
 * `1 camera` which is used to detect what is in front of the vehicle
-     
-We are also using a Jetson Nano using the Linux OS, which is using all the input sensors mentioned above
 
 On the software part the following programs and modules are used:
    - `pillar.py` contains the program that has the finctionality of detecting the pillars and their position.
